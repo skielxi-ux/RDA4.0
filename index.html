@@ -1712,6 +1712,14 @@
   .nl-gal-arrow:hover{background:var(--red);border-color:var(--red);}
   @media(max-width:960px){.nl-hero{min-height:0;padding:96px 0 262px;}.nl-hero-veil{background:linear-gradient(0deg,rgba(9,15,20,.92) 0%,rgba(9,15,20,.72) 55%,rgba(9,15,20,.55) 100%);}.nl-gal-ui{bottom:124px;}.nl-gal-cap,.nl-gal-count{display:none;}.nl-gal-arrow{width:38px;height:38px;}}
   @media(prefers-reduced-motion:reduce){.nl-hero-bg img{transform:none;transition:none;}.nl-gal-bars i.on::after{animation:none;transform:scaleX(1);}}
+  .nl-show-swiper .swiper-slide.nl-shot{min-height:0;background:#0B1319;}
+  .nl-shot img{display:block;width:100%;height:auto;cursor:zoom-in;background:#fff;}
+  .nl-shot .nl-device-bar{flex:0 0 auto;}
+  .nl-zoom{position:fixed;inset:0;z-index:2147483000;background:rgba(7,12,16,.9);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:28px;cursor:zoom-out;}
+  .nl-zoom.open{display:flex;animation:nlFade .25s ease;}
+  .nl-zoom img{max-width:min(1500px,100%);max-height:100%;border-radius:12px;box-shadow:0 40px 120px rgba(0,0,0,.6);background:#fff;}
+  .nl-zoom-x{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-size:18px;cursor:pointer;}
+  @keyframes nlFade{from{opacity:0;}to{opacity:1;}}
   .nl-chip{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.96);color:var(--ink);border-radius:16px;padding:11px 16px 11px 12px;font-weight:900;font-size:13.5px;box-shadow:0 24px 50px -14px rgba(0,0,0,.55);animation:nlFloat 6.5s ease-in-out infinite;transform:translateZ(60px);}
   .nl-chip i{width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#fff;font-style:normal;}
   .nl-chip small{display:block;font-weight:400;font-size:11.5px;color:#69747C;margin-top:1px;}
@@ -2175,38 +2183,21 @@
           <button class="nl-tab active" data-i="0"><div class="t"><i class="fa-solid fa-magnifying-glass"></i>Explorar la Red</div><p class="d">El marketplace completo: navegás el stock de todas las agencias verificadas y filtrás por marca, modelo, año, km y ciudad.</p><span class="bar"></span></button>
           <button class="nl-tab" data-i="1"><div class="t"><i class="fa-solid fa-tower-broadcast"></i>La Red está buscando</div><p class="d">Ves en tiempo real qué autos piden los clientes de otras agencias. Si lo tenés en tu lote, salís a ofrecerlo y cobrás la comisión.</p><span class="bar"></span></button>
           <button class="nl-tab" data-i="2"><div class="t"><i class="fa-solid fa-bolt"></i>Oportunidades exclusivas</div><p class="d">Aviso destacado cuando otra agencia publica stock a precio especial que coincide con lo que buscás.</p><span class="bar"></span></button>
-          <button class="nl-tab" data-i="3"><div class="t"><i class="fa-solid fa-list-check"></i>Seguimiento de operaciones</div><p class="d">Desde el match hasta el cierre, la plataforma acompaña cada paso para que no se pierda ningún detalle.</p><span class="bar"></span></button>
-          <button class="nl-tab" data-i="4"><div class="t"><i class="fa-solid fa-chart-line"></i>Performance</div><p class="d">Qué te devolvió la red este mes, qué quedó sin usar y qué te costó: todo en un solo resumen.</p><span class="bar"></span></button>
+          <button class="nl-tab" data-i="3"><div class="t"><i class="fa-solid fa-gauge-high"></i>Dashboard</div><p class="d">Tu actividad en un vistazo: stock, búsquedas, matches, operaciones y comisiones, con las alertas del Radar sobre lo que conviene mirar hoy.</p><span class="bar"></span></button>
+          <button class="nl-tab" data-i="4"><div class="t"><i class="fa-solid fa-list-check"></i>Seguimiento de operaciones</div><p class="d">Desde el match hasta el cierre, la plataforma acompaña cada paso para que no se pierda ningún detalle.</p><span class="bar"></span></button>
+          <button class="nl-tab" data-i="5"><div class="t"><i class="fa-solid fa-chart-line"></i>Performance</div><p class="d">Qué te devolvió la red este mes, qué quedó sin usar y qué te costó: todo en un solo resumen.</p><span class="bar"></span></button>
         </div>
 
         <div class="nl-show-swiper swiper nl-rv from-r" id="nl-show-swiper">
           <div class="swiper-wrapper">
             <!-- 1 Explorar -->
-            <div class="swiper-slide"><div class="nl-mock">
-              <div class="nl-mock-top"><div><h4>Explorar la Red</h4><p class="sub">Stock de todas las agencias verificadas</p></div><span class="mk-pill ink"><i class="fa-solid fa-filter"></i> Filtros</span></div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="mk-pill">Marca</span><span class="mk-pill">Modelo</span><span class="mk-pill">Año</span><span class="mk-pill">Km</span><span class="mk-pill">Ciudad</span></div>
-              <div class="mk-grid3">
-                <div class="mk-vcard"><div class="ph"><i class="fa-solid fa-car-side"></i></div><div class="bd"><div class="p">USD 38.500</div><div class="n">Pick-up 4x4 2021</div><div class="a">Agencia Norte · Tucumán</div><div class="c">Comisión 3%</div></div></div>
-                <div class="mk-vcard"><div class="ph"><i class="fa-solid fa-car-side"></i></div><div class="bd"><div class="p">USD 29.800</div><div class="n">SUV Familiar 2022</div><div class="a">Agencia Valle · Salta</div><div class="c">Comisión 3%</div></div></div>
-                <div class="mk-vcard"><div class="ph"><i class="fa-solid fa-car-side"></i></div><div class="bd"><div class="p">USD 18.900</div><div class="n">Sedán Automático 2020</div><div class="a">Agencia Sur · Jujuy</div><div class="c">Comisión 2,5%</div></div></div>
-              </div>
-              <div class="mk-note">Datos de ejemplo con fines ilustrativos</div>
-            </div></div>
+            <div class="swiper-slide nl-shot"><div class="nl-device-bar"><i></i><i></i><i></i><b>Red de Autos</b></div><img src="assets/sistema/explorar-la-red.webp" width="1590" height="1275" alt="Pantalla Explorar la Red: stock de todas las agencias con filtros" loading="lazy" decoding="async" onclick="nlZoom(this.src)"></div>
             <!-- 2 La red busca -->
-            <div class="swiper-slide"><div class="nl-mock">
-              <div class="nl-mock-top"><div><h4>La Red está buscando</h4><p class="sub">Lo que piden los clientes de otras agencias</p></div><span class="mk-pill green"><i class="fa-solid fa-circle" style="font-size:7px;"></i> En vivo</span></div>
-              <div class="mk-card"><div class="mk-thumb"><i class="fa-solid fa-magnifying-glass"></i></div><div><div class="nm">Pick-up 4x4 · 2020–2023</div><div class="sb">Hasta USD 40.000 · Agencia Valle</div></div><span class="mk-btn">Tengo esta unidad</span></div>
-              <div class="mk-card"><div class="mk-thumb"><i class="fa-solid fa-magnifying-glass"></i></div><div><div class="nm">SUV · 2019 en adelante</div><div class="sb">Hasta USD 28.000 · Agencia Centro</div></div><span class="mk-btn">Tengo esta unidad</span></div>
-              <div class="mk-card"><div class="mk-thumb"><i class="fa-solid fa-magnifying-glass"></i></div><div><div class="nm">Sedán automático · 2021</div><div class="sb">Hasta USD 20.000 · Agencia Cumbre</div></div><span class="mk-btn">Tengo esta unidad</span></div>
-              <div class="mk-note">Datos de ejemplo con fines ilustrativos</div>
-            </div></div>
+            <div class="swiper-slide nl-shot"><div class="nl-device-bar"><i></i><i></i><i></i><b>Red de Autos</b></div><img src="assets/sistema/la-red-esta-buscando.webp" width="1590" height="860" alt="Pantalla La Red está buscando: búsquedas activas de otras agencias" loading="lazy" decoding="async" onclick="nlZoom(this.src)"></div>
             <!-- 3 Exclusivas -->
-            <div class="swiper-slide"><div class="nl-mock">
-              <div class="nl-mock-top"><div><h4>Oportunidades exclusivas</h4><p class="sub">Precio especial que coincide con tu búsqueda</p></div><span class="mk-pill red"><i class="fa-solid fa-bolt"></i> Nueva</span></div>
-              <div class="mk-excl"><span class="mk-ribbon">Exclusiva</span><div class="mk-thumb"><i class="fa-solid fa-car-side"></i></div><div><div class="nm" style="font-weight:900;font-size:16px;">Pick-up 4x4 2021</div><div class="sb" style="font-size:12.5px;color:#69747C;">Agencia Norte · coincide con tu búsqueda</div></div><div style="margin-left:auto;text-align:right;"><div class="mk-old">USD 40.500</div><div class="mk-new">USD 38.500</div></div></div>
-              <div class="mk-card" style="background:#F0FDF4;border-color:#BBF7D0;"><i class="fa-solid fa-bell" style="color:#166534;font-size:18px;"></i><div><div class="nm" style="color:#166534;">¡Tenés 1 oportunidad nueva!</div><div class="sb">Te avisamos apenas aparece stock que te interesa.</div></div></div>
-              <div class="mk-note">Datos de ejemplo con fines ilustrativos</div>
-            </div></div>
+            <div class="swiper-slide nl-shot"><div class="nl-device-bar"><i></i><i></i><i></i><b>Red de Autos</b></div><img src="assets/sistema/oportunidades-exclusivas.webp" width="1590" height="800" alt="Pantalla Oportunidades Exclusivas: precios especiales dentro de la red" loading="lazy" decoding="async" onclick="nlZoom(this.src)"></div>
+            <!-- 3b Dashboard -->
+            <div class="swiper-slide nl-shot"><div class="nl-device-bar"><i></i><i></i><i></i><b>Red de Autos</b></div><img src="assets/sistema/dashboard.webp" width="1590" height="1150" alt="Dashboard con el resumen de actividad, alertas del Radar y métricas" loading="lazy" decoding="async" onclick="nlZoom(this.src)"></div>
             <!-- 4 Seguimiento -->
             <div class="swiper-slide"><div class="nl-mock">
               <div class="nl-mock-top"><div><h4>Seguimiento de la operación</h4><p class="sub">Del match al cierre, sin perder ningún paso</p></div><span class="mk-pill green">3% de comisión</span></div>
@@ -2404,6 +2395,7 @@
     </div>
   </div>
 
+  <div class="nl-zoom" id="nl-zoom" onclick="nlZoomClose()" role="dialog" aria-label="Captura ampliada"><button class="nl-zoom-x" aria-label="Cerrar" onclick="nlZoomClose()"><i class="fa-solid fa-xmark"></i></button><img id="nl-zoom-img" alt=""></div>
 <div class="nl-sticky" id="nl-sticky">
   <button class="nl-btn nl-btn-primary" onclick="pedirAccesoWhatsapp('hero')">Solicitar acceso →</button>
 </div>
@@ -11875,6 +11867,11 @@ function nlCloseVideo(){
     });
   }
 
+  /* ---- captura ampliada ---- */
+  window.nlZoom = function(src){ const z = document.getElementById('nl-zoom'), i = document.getElementById('nl-zoom-img'); if(!z||!i) return; i.src = src; z.classList.add('open'); };
+  window.nlZoomClose = function(){ const z = document.getElementById('nl-zoom'); if(z) z.classList.remove('open'); };
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') window.nlZoomClose(); });
+
   /* ---- hero: galería de fotos (Swiper) ---- */
   if(window.Swiper && $('#nl-hero-swiper')){
     const DURH = 4800;
@@ -11947,7 +11944,7 @@ function nlCloseVideo(){
   }
   if(window.Swiper && $('#nl-show-swiper')){
     showSwiper = new Swiper('#nl-show-swiper', {
-      effect:'fade', fadeEffect:{crossFade:true}, speed:650, allowTouchMove:true, rewind:true, autoHeight:false,
+      effect:'fade', fadeEffect:{crossFade:true}, speed:650, allowTouchMove:true, rewind:true, autoHeight:true,
       autoplay: reduce ? false : {delay:DUR, disableOnInteraction:false, pauseOnMouseEnter:false},
       on:{ slideChange(sw){ markTab(sw.realIndex); } },
     });
